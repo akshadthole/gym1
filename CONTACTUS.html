@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+       .container{
+          
+           font-family:  'Fira Sans Condensed', sans-serif;
+       }
+       .container img{
+           display: block;
+           position: absolute;
+           margin: 107px 8px;
+       }
+       
+       .detail {
+    display: block;
+    position: absolute;
+    right: 157px;
+    margin: 57px 339px;
+    padding: 44px;
+    font-size: 4.685212298682284vw;
+  
+}
+
+#det:hover{
+    transform: scale(1.2);
+}
+.detail:hover{
+    font-weight: bolder;
+    
+}
+#det{
+    font-size: 2.1961932650073206vw;
+    position: absolute;
+    right: 88px;
+    margin: 198px 5px;
+    transition: transform .2s;
+}
+    </style>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@1,100&display=swap" rel="stylesheet">
+</head>
+ <body>
+    <h1 style="font-family:'Fira Sans Condensed', sans-serif ;">Contact Us</h1>
+    <div class="container">
+        <img src="contact-us.png" onmouseover="bigImg(this)" onmouseout="normalImg(this)" alt="Contact us:-" >
+        <div class="detail">
+             Details:-
+        </div>
+        <div id="det">
+            Gmail:&nbsp; socialfitness@gmail.com<br><br>
+Phone:&nbsp; 9870502665<br><br>
+Address:&nbsp; 202-203, Trade Avenue, Suren Road,<br> Off. Western Express Highway,<br> Andheri (East), Mumbai- 400093
+        </div>
+
+
+
+
+    </div>
+    <script>
+    function bigImg(x) {
+        x.style.height = "300px";
+        x.style.width = "300px";
+      }
+      
+      function normalImg(x) {
+        x.style.height = "400px";
+        x.style.width = "500px";
+      }</script>
+ </body> 
+ 
+</html>  

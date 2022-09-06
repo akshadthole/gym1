@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gallery</title>
+        <style>
+            body{
+                font-family: 'Akaya Telivigala', cursive;
+                background-image: url(gallerybg.jpg);
+                height: 1500px;
+                opacity: 1;
+                background-repeat: no-repeat;
+  background-attachment: fixed;
+            }
+            .inside{
+                background-color:  #87ceeb;
+                
+    position: absolute;
+    top: 70px;
+    margin: 108px -9px;
+    padding: 4px;
+    width: 100%;
+    height: 500px;
+}
+            .inside img{
+                padding: 7px;
+                transition: transform .2s;
+            }
+            .inside img:hover{
+                transform: scale(1.5);
+                opacity: 1;
+            }
+            .cardio img:hover{
+                transform: scale(1.5);
+                opacity: 1;
+            }
+            .cardio{
+                position: absolute;
+                top: 850px;
+                width: 100%;
+                margin: -9px -9px;
+    padding: 6px;
+    opacity: 0.9;
+                background-color:white;
+                height: 500px;
+            }
+            .cardio img{
+                opacity: 1;
+                height: 330px;
+                transition: transform .2s;
+            }
+            
+        </style>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <h1 style="color:white; left: 30px;position: absolute;font-size: 3.6603221083455346vw;">OUR GALLERY:-</h1>
+        <div class="inside">
+            <h1 style="text-align: center;">Inside Area </h1>
+            <img src="inside1.jpg" alt="inside1" width="32%" style="max-width:100%;height:auto;">
+            <img src="inside2.jpg" alt="inside1" width="32%" height="330px" style="max-width:100%;height:auto;">
+            <img src="inside3.jpg" alt="inside1" width="32%" style="max-width:100%;height:auto;">
+        </div>
+        <div class="cardio">
+            <h1 style="text-align: center;">Cardio Section </h1>
+            <img src="cardio1.jpg" alt="inside1" width="33%" style="max-width:100%;height:auto;">
+            <img src="cardio2.jpg" alt="inside1" width="33%" style="max-width:100%;height:auto;">
+            <img src="cardio3.jpg" alt="inside1" width="33%" style="max-width:100%;height:auto;">
+        </div>
+                
+    </body>
+
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <script
+  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="design.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@600&display=swap" rel="stylesheet">
+<style>
+    body{
+        background-repeat: no-repeat;
+  background-attachment: fixed;
+  
+  
+    }
+
+    .Wanderlust{
+    background-color: white;
+    width: 33%;
+    color: black;
+    transition: transform .2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+ align-content: center;
+ width: fit-content;
+ height: fit-content;
+ 
+ margin: 8px 36px;
+    padding: 0px 2px;
+
+}
+form {
+    text-align: center;
+    padding: 19px 152px;
+    font-size: 18px;
+    font-family: 'Baloo Da 2', cursive;
+}
+
+form input {
+    width: 65%;
+    border: 3px solid black;
+    border-radius: 10px;
+   
+    margin: 6px 6px;
+}
+#cont{
+    width: 67%;
+    border-radius: 10px;
+    border: 3px solid black;
+}
+form option{
+    font-family: 'Baloo Da 2', cursive ;
+    width: 65%;
+    text-align: center;
+}
+form select{
+    text-align: center;
+    font-size: 18px;
+}
+#informa2{
+    width: 10%;
+}
+h1{
+    color:rgb(173, 172, 164);
+    margin: 36px 34px;
+}
+
+</style>
+
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <div class="Wanderlust registration-form container">
+        <div class="row">
+          <div class="col-md-6 offset-md-3">
+         <form  name="contactForm"  onsubmit="return validateForm()">
+          
+           <div class="row" ng-app="">
+             <label>Name
+             <input type="text" name="name" ng-model="name"></label>
+             <h2>Welcome, {{name}}!</h2>
+             <div class="error" id="nameErr"></div>
+           </div>
+           </br>
+           <div class="row">
+             <label>Email</label>
+             <input type="text" name="email">
+             <div class="error" id="emailErr"></div>
+           </div>
+           </br>
+           <div class="row">
+             <label>Programs</label>
+             <select name="country" id="cont">
+              <option>Select</option>
+              <option>Personal training Program</option>
+              <option>Quick training Program</option>
+              <option>Group Program</option>
+             </select>
+             <div class="error" id="countryErr"></div>
+           </div>
+           </br>
+           <div class="row">
+             <label>Gender</label>
+             <div class="form-inline">
+               <label style="margin-left:5px;"><input type="radio" id="informa2" name="gender" value="male"> Male</label>
+               <label style="margin-left:5px;"><input type="radio" id="informa2" name="gender" value="female"> Female</label>
+             </div>
+             </br>
+             <div class="error" id="genderErr"></div>
+           </div>
+           </br>
+           <div class="row">
+             <input type="submit"  value="Submit">
+           </div>
+         </form>
+         </div>
+         </div>
+       </div>
+     
+     
+     </body>
+     
+     <script>
+       function printError(elemId, hintMsg) {
+         document.getElementById(elemId).innerHTML = hintMsg;
+       }
+     
+       function validateForm() {
+         var name = document.forms.contactForm.name.value;
+         var email = document.forms.contactForm.email.value;
+         var country = document.forms.contactForm.country.value;
+         var gender = document.forms.contactForm.gender.value;
+         var nameErr = (emailErr = passwordErr = countryErr = genderErr = true);
+     
+         //Validate name
+         if (name == "") {
+           printError("nameErr", "Please enter your name");
+         } else {
+           var regex = /^[a-zA-Z\s]+$/;
+           if (regex.test(name) === false) {
+             printError("nameErr", "Please enter a valid name");
+           } else {
+             printError("nameErr", "");
+             nameErr = false;
+           }
+         }
+     
+         // Validate email address
+         if (email == "") {
+           printError("emailErr", "Please enter your email address");
+         } else {
+           // Regular expression for basic email validation
+           var regex = /^\S+@\S+\.\S+$/;
+           if (regex.test(email) === false) {
+             printError("emailErr", "Please enter a valid email address");
+           } else {
+             printError("emailErr", "");
+             emailErr = false;
+           }
+         }
+     
+     
+         // Validate country
+         if (country == "Select") {
+           printError("countryErr", "Please select your program");
+         } else {
+           printError("countryErr", "");
+           countryErr = false;
+         }
+     
+         // Validate gender
+         if (gender == "") {
+           printError("genderErr", "Please select your gender");
+         } else {
+           printError("genderErr", "");
+           genderErr = false;
+         }
+     
+         if ((nameErr || emailErr || countryErr || genderErr) == true) {
+           // console.log(nameErr, emailErr, passwordErr, countryErr, genderErr);
+           return false;
+         } else {
+           // Creating a string from input data for preview
+           console.log("done");
+           var dataPreview =
+             "You've entered the following details: \n" +
+             "Full Name: " +
+             name +
+             "\n" +
+             "Email Address: " +
+             email +
+             "\n" +
+             "Program Selected: " +
+             country +
+             "\n" +
+             "Gender: " +
+             gender +
+             "\n";
+     
+           alert(dataPreview);
+         }
+       }
+     
+     </script>
